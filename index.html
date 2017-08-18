@@ -20,13 +20,10 @@
         <article class="post-content">
 
 
-          <div ng-controller='viewController as main'ng-repeat="n in _.range(5)">
+          <div ng-controller="viewController as main" ng-repeat="n in _.range(5)">
       		{{main.message}}
           </div>
           <ng-view></ng-view>
-
-
-
 
           </article>
         </div>
