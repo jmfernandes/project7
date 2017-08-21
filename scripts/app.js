@@ -16,6 +16,10 @@ mainApp.config(function($routeProvider) {
       templateUrl: 'views/ex1.html',
       controller: 'ex1Controller as ex1'
     })
+    .when('/ex2', {
+      templateUrl: 'views/ex2.html',
+      controller: 'ex2Controller as ex2'
+    })
 		.otherwise({
 			redirectTo: '/home'
 		});
