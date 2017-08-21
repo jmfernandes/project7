@@ -1,0 +1,5 @@
+<button ng-click='ex1.changeMe()'>change</button>
+<div ng-repeat='note in ex1.notes'>
+	Without Bind Once:<div class="label" ng-bind="note.label"></div>
+	With Bind Once: <div class="label" ng-bind='::note.label'></div>
+</div>
