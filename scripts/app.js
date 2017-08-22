@@ -24,6 +24,10 @@ mainApp.config(function($routeProvider) {
       templateUrl: 'views/ex3.html',
       controller: 'ex3Controller as ctrl'
     })
+    .when('/ex4', {
+      templateUrl: 'views/ex4.html',
+      controller: 'ex3Controller as ctrl'
+    })
 		.otherwise({
 			redirectTo: '/home'
 		});

@@ -1,8 +1,20 @@
+<style>
+  .username.ng-valid{
+    background-color:green;
+  }
+  .username.ng-dirty.ng-invalid-required{
+    background-color:red;
+  }
+  .username.ng-dirty.ng-invalid-minlength{
+    background-color:lightpink;
+  }
+</style>
 <form ng-submit="ctrl.submit1()" name="simpleForm">
 <input  type="email"
+        class="username"
         name="uname"
         ng-model="ctrl.user1.username"
-        ng-minlength="6"
+        ng-minlength="10"
         required/>
 <div ng-messages="simpleForm.uname.$error">
      <div ng-messages-include="error-messages"></div>
@@ -23,6 +35,7 @@
 
 <form ng-submit="ctrl.submit2()" name="overriddenForm">
 <input  type="email"
+        class="username"
         name="uname"
         ng-model="ctrl.user2.username"
         ng-minlength="6"
