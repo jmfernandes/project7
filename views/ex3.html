@@ -5,17 +5,21 @@
         ng-minlength="6"
         required/>
 <div ng-messages="simpleForm.uname.$error">
-     <div ng-messages-include="error-messages"></div></div>
+     <div ng-messages-include="error-messages"></div>
+   </div>
 <input  type="password"
         name="pwd"
         ng-model="ctrl.user1.password"
         required/>
 <div ng-messages="simpleForm.pwd.$error">
-    <div ng-messages-include="error-messages"></div></div>
+    <div ng-messages-include="error-messages"></div>
+  </div>
 <input  type="submit"
         value="Submit"
         ng-disabled="simpleForm.$invalid"/>
 </form>
+
+
 
 <form ng-submit="ctrl.submit2()" name="overriddenForm">
 <input  type="email"
@@ -24,21 +28,16 @@
         ng-minlength="6"
         required/>
 <div ng-messages="overriddenForm.uname.$error">
-     <div ng-messages-include="error-messages">
-     <div ng-message="required">
-       please enter a username
-     </div>
-     </div>
+    <div ng-message="required">please enter a username</div>
+    <div ng-messages-include="error-messages"></div>
 </div>
 <input  type="password"
         name="pwd"
         ng-model="ctrl.user2.password"
         required/>
-<div ng-messages="overriddenForm.pwd.$error">
-  <div ng-message="required">
-    please enter a password
-  </div>
-</div>
+      <div ng-messages="overriddenForm.pwd.$error">
+          <div ng-message="required">please enter a password</div>
+      </div>
 <input  type="submit"
         value="Submit"
         ng-disabled="simpleForm.$invalid"/>
