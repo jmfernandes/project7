@@ -15,6 +15,18 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
+      'assets/library/angular.min.js',
+      'assets/library/angular-route.min.js',
+      'assets/library/lodash.js',
+      'assets/library/angular-mocks.js',
+      'assets/library/jquery-3.2.1.min.js',
+      'scripts/app.js',
+      'scripts/controllers/ex1Controller.js',
+      'scripts/controllers/ex2Controller.js',
+      'scripts/controllers/homeController.js',
+      'scripts/controllers/mainController.js',
+      'scripts/controllers/controller.js',
+      'controllerSpec.js',
       '*.js'
     ],
 

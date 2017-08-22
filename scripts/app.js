@@ -1,4 +1,4 @@
-var mainApp = angular.module("viewApp", ['ngRoute']);
+var mainApp = angular.module("viewApp", ['ngRoute','ngMessages']);
 // allow DI for use in controllers, unit tests
 mainApp.constant('_', window._);
 // use in views, ng-repeat="x in _.range(3)"
@@ -19,6 +19,10 @@ mainApp.config(function($routeProvider) {
     .when('/ex2', {
       templateUrl: 'views/ex2.html',
       controller: 'ex2Controller as ex2'
+    })
+    .when('/ex3', {
+      templateUrl: 'views/ex3.html',
+      controller: 'ex3Controller as ctrl'
     })
 		.otherwise({
 			redirectTo: '/home'

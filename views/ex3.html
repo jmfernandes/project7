@@ -1,0 +1,57 @@
+<form ng-submit="ctrl.submit1()" name="simpleForm">
+<input  type="email"
+        name="uname"
+        ng-model="ctrl.user1.username"
+        ng-minlength="6"
+        required/>
+<div ng-messages="simpleForm.uname.$error">
+     <div ng-messages-include="error-messages"></div></div>
+<input  type="password"
+        name="pwd"
+        ng-model="ctrl.user1.password"
+        required/>
+<div ng-messages="simpleForm.pwd.$error">
+    <div ng-messages-include="error-messages"></div></div>
+<input  type="submit"
+        value="Submit"
+        ng-disabled="simpleForm.$invalid"/>
+</form>
+
+<form ng-submit="ctrl.submit2()" name="overriddenForm">
+<input  type="email"
+        name="uname"
+        ng-model="ctrl.user2.username"
+        ng-minlength="6"
+        required/>
+<div ng-messages="overriddenForm.uname.$error">
+     <div ng-messages-include="error-messages">
+     <div ng-message="required">
+       please enter a username
+     </div>
+     </div>
+</div>
+<input  type="password"
+        name="pwd"
+        ng-model="ctrl.user2.password"
+        required/>
+<div ng-messages="overriddenForm.pwd.$error">
+  <div ng-message="required">
+    please enter a password
+  </div>
+</div>
+<input  type="submit"
+        value="Submit"
+        ng-disabled="simpleForm.$invalid"/>
+</form>
+
+<script type="text/ng-template" id="error-messages">
+<div ng-message="required">
+  this field is mandatory
+</div>
+<div ng-message="minlength">
+  minimum length condition not met
+</div>
+<div ng-message="email">
+  please enter a valid email address
+</div>
+</script>
