@@ -22,3 +22,45 @@
 
   <input type="submit" value="Submit" ng-disabled="myForm.$invalid"/>
 </form>
+------------------------------------------------------------------------
+<div>
+  <h2> what are your favorite sports</h2>
+  <div ng-repeat="sport in ctrl.sports">
+    <label ng-bind="sport.label"></label>
+    <div>
+      with Binding:
+      <input type="checkbox" ng-model="sport.selected"
+          ng-true-value="'YES'" ng-false-value="'NO'">
+    </div>
+    <div>
+      using ng-checked:
+      <input type="checkbox" ng-checked="sport.selected === 'YES'">
+    </div>
+    <div>
+      current state: {{sport.selected}}
+    </div>
+  </div>
+</div>
+------------------------------------------------------------------------
+<div ng-init="otherGender = 'other'">
+  <input type="radio" name="gender" ng-model="user.gender" value="male"/>Male
+  <input type="radio" name="gender" ng-model="user.gender" value="female"/>Female
+  <input type="radio" name="gender" ng-model="user.gender" value="otherGender"/>{{otherGender}}
+</div>
+------------------------------------------------------------------------
+<div>
+  <select ng-model="ctrl.selectedCountryId"
+  ng-options="c.id as c.label for c in ctrl.countries"></select>
+  Selected Country id: {{ctrl.selectedCountryId}}
+</div>
+
+<div>
+  <select ng-model="ctrl.selectedCountry"
+  ng-options="c.label for c in ctrl.countries"></select>
+  Selected Country: {{ctrl.selectedCountry}} and {{ctrl.selectedCountry.label}}
+</div>
+
+
+
+<br/>
+<a href="#!/home"> Back</a>
